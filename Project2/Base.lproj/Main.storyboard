@@ -16,27 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcz-Xh-Q70">
-                                <rect key="frame" x="107" y="230" width="200" height="100"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcz-Xh-Q70">
+                                <rect key="frame" x="107" y="268" width="200" height="100"/>
                                 <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N62-k8-WfL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TD-1S-IHw">
-                                <rect key="frame" x="107" y="360" width="200" height="100"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TD-1S-IHw">
+                                <rect key="frame" x="107" y="398" width="200" height="100"/>
                                 <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eae-dH-tEc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-Rq-QdO">
-                                <rect key="frame" x="107" y="100" width="200" height="100"/>
+                                <rect key="frame" x="107" y="138" width="200" height="100"/>
                                 <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHb-SY-Vf0"/>
+                                </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o9P-CU-ir6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="o9P-CU-ir6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1D2-by-nrV"/>
                             <constraint firstItem="Zcz-Xh-Q70" firstAttribute="top" secondItem="joQ-Rq-QdO" secondAttribute="bottom" constant="30" id="3pL-jo-xhs"/>
                             <constraint firstItem="0TD-1S-IHw" firstAttribute="centerX" secondItem="Zcz-Xh-Q70" secondAttribute="centerX" id="EAk-fO-QAJ"/>
+                            <constraint firstItem="o9P-CU-ir6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xgr-i0-f6X"/>
                             <constraint firstItem="0TD-1S-IHw" firstAttribute="top" secondItem="Zcz-Xh-Q70" secondAttribute="bottom" constant="30" id="Z8r-l2-Imi"/>
                             <constraint firstItem="Zcz-Xh-Q70" firstAttribute="centerX" secondItem="joQ-Rq-QdO" secondAttribute="centerX" id="aeG-62-mZ3"/>
-                            <constraint firstItem="joQ-Rq-QdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="ubx-1c-tc9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o9P-CU-ir6" secondAttribute="trailing" id="gfw-tW-rr6"/>
+                            <constraint firstItem="joQ-Rq-QdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ubx-1c-tc9"/>
                             <constraint firstItem="joQ-Rq-QdO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z6c-9n-DwK"/>
                         </constraints>
                     </view>
@@ -45,6 +60,7 @@
                         <outlet property="button1" destination="joQ-Rq-QdO" id="VV0-03-lGM"/>
                         <outlet property="button2" destination="Zcz-Xh-Q70" id="dwz-ae-eGn"/>
                         <outlet property="button3" destination="0TD-1S-IHw" id="dFE-7Q-CWF"/>
+                        <outlet property="progressView" destination="o9P-CU-ir6" id="4xH-Wi-Hdx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
