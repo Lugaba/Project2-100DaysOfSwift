@@ -35,6 +35,8 @@ class ViewController: UIViewController {
 
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showScore))
+        
         askQuestion()
         // pode arrumar tambem com askQuestion(action: nil)
     }
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = "score: \(score) || \(countries[correctAnswer].uppercased())"
+        title = "\(countries[correctAnswer].uppercased())"
     }
     
     func restart(action: UIAlertAction! = nil){
@@ -94,5 +96,10 @@ class ViewController: UIViewController {
         contador += 1
     }
     
+    @objc func showScore() {
+        let ac = UIAlertController(title: "Score", message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
 }
 
