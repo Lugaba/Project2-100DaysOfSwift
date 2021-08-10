@@ -18,10 +18,14 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     var contador = 0
     var progress = Progress(totalUnitCount: 10)
+    var highScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        highScore = UserDefaults.standard.integer(forKey: "highScore")
+        print(highScore)
+        
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
         button1.layer.borderWidth = 1
@@ -87,9 +91,18 @@ class ViewController: UIViewController {
             
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Game Over", message: "Your final score is \(score)", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Restart", style: .default, handler: restart))
-            present(ac, animated: true)
+            if score < highScore {
+                let ac = UIAlertController(title: "Game Over", message: "Your final score is \(score)", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Restart", style: .default, handler: restart))
+                present(ac, animated: true)
+            } else {
+                highScore = score
+                UserDefaults.standard.set(highScore, forKey: "highScore")
+                let ac = UIAlertController(title: "Congratulations", message: "Your new high score is \(score)", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Restart", style: .default, handler: restart))
+                present(ac, animated: true)
+            }
+            
         }
         
         
