@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         highScore = UserDefaults.standard.integer(forKey: "highScore")
-        print(highScore)
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
